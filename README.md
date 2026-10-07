@@ -192,6 +192,6 @@ Planned folders (`python/`, `powerbi/`) and further SQL files will be added as e
 
 <div align="center">
 
-Feedback is welcome. Open an issue or reach out on [LinkedIn](www.linkedin.com/in/arghya-pramanik).
+Feedback is welcome. Open an issue or reach out on [LinkedIn](https://www.linkedin.com/in/arghya-pramanik).
 
 </div>
