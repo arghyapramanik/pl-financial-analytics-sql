@@ -8,7 +8,6 @@
 ![SQL](https://img.shields.io/badge/SQL-E34F26?style=for-the-badge&logo=databricks&logoColor=white)
 ![Financial Analytics](https://img.shields.io/badge/Financial%20Analytics-2563EB?style=for-the-badge&logo=quickbooks&logoColor=white)
 ![Data Validation](https://img.shields.io/badge/Data%20Validation-16A34A?style=for-the-badge&logo=checkmarx&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
 ![Python](https://img.shields.io/badge/Python-Planned-lightgrey?style=for-the-badge&logo=python&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power%20BI-Planned-lightgrey?style=for-the-badge&logo=powerbi&logoColor=white)
