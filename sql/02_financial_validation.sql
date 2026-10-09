@@ -26,14 +26,14 @@ WHERE pl_dataset.cogs > pl_dataset.revenue;
 
 -- Q: What are the total revenue, costs and profits across all transactions?
 SELECT 
-	ROUND(SUM(revenue)/1000000,2) AS total_revenue_md,
-    ROUND(SUM(cogs)/1000000,2) AS total_cogs_md,
-    ROUND(SUM(gross_profit)/1000000,2) AS total_gross_profit_md,
-    ROUND(SUM(operating_expense)/1000000,2) AS total_opex_md,
-    ROUND(SUM(ebitda)/1000000,2) AS total_ebitda_md,
-    ROUND(SUM(interest)/1000000,2) AS total_interest_md,
-    ROUND(SUM(tax)/1000000,2) AS total_tax_md,
-    ROUND(SUM(net_profit)/1000000,2) AS total_net_profit_md
+	ROUND(SUM(revenue)/1000000,2) AS total_revenue_m,
+    ROUND(SUM(cogs)/1000000,2) AS total_cogs_m,
+    ROUND(SUM(gross_profit)/1000000,2) AS total_gross_profit_m,
+    ROUND(SUM(operating_expense)/1000000,2) AS total_opex_m,
+    ROUND(SUM(ebitda)/1000000,2) AS total_ebitda_m,
+    ROUND(SUM(interest)/1000000,2) AS total_interest_m,
+    ROUND(SUM(tax)/1000000,2) AS total_tax_m,
+    ROUND(SUM(net_profit)/1000000,2) AS total_net_profit_m
 FROM pl_dataset;
 -- INSIGHTS: COGS has the represents the largest deduction from revenue 
 -- 			 followed by Operating Expenses
