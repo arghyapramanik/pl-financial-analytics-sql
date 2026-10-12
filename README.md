@@ -70,6 +70,9 @@ Totals across all 499 transactions, in millions (the source does not state a cur
 | **3 of the 26 losses have positive EBITDA** | Even after the tax credit, interest turned these profitable operations into losses, so the issue is financing, not operations |
 | Tax is negative only on the 26 loss-making rows | Consistent with tax following pre-tax profit; to be confirmed in a later phase |
 | No duplicates, no NULLs, no COGS above revenue | No cleaning step that could distort the results |
+| About **17 of every 100 units of revenue** reach net profit (16.83% net margin) | Sets the benchmark that regions, products and customers are compared against later |
+| **COGS takes 57.5% of revenue**, the largest cost, while operating expense takes about 20% | COGS is the main cost category to investigate for potential savings |
+| **Operating expense consumes about 47% of gross profit**, and interest plus tax about 25% of EBITDA | Shows where profit shrinks after COGS |
 
 ---
 
@@ -99,6 +102,23 @@ Totals across all 499 transactions, in millions (the source does not state a cur
 | Negative values | Tax (26), EBITDA (23), net profit (26); none in revenue, COGS, operating expense, interest or gross profit |
 | Negative tax vs loss-making transactions | All 26 negative-tax rows are the 26 loss-making rows |
 | Loss-making with positive EBITDA | 3 rows, where interest exceeds EBITDA |
+
+### Phase 3: P&L Overview (`03_pnl_overview.sql`)
+*Question: What is the combined financial picture across all transactions?*
+
+| Check | Result |
+|---|---|
+| Combined totals, revenue to net profit | See Headline Financials above |
+| Zero-revenue transactions | None, so margins are defined for every row |
+| Combined margins | Gross **42.49%** · EBITDA **22.52%** · Net **16.83%** |
+| Cost shares of revenue | COGS **57.51%** · Operating expense **19.97%** · Interest **1.49%** · Tax **4.21%** |
+| Average per transaction | Revenue 298,913.18 · COGS 171,915.07 · Gross profit 126,998.11 · EBITDA 67,319.26 · Net profit 50,295.07 (includes the 26 loss-making transactions) |
+| Stage consumption | Operating expense takes about 47% of gross profit; interest and tax together take about 25% of EBITDA |
+| Combined tax rate | About 20.0% of pre-tax profit (EBITDA minus interest) |
+| Row-level margins | Gross, EBITDA and net margin plus cost ratios calculated for every transaction (top 20 by net margin shown) |
+
+Combined margins are calculated as total profit divided by total revenue, not as an average of row-level margins, so larger transactions carry more weight.
+
 ---
 
 ## Tech Stack and Skills
@@ -135,7 +155,7 @@ Totals across all 499 transactions, in millions (the source does not state a cur
 |---|---|---|---|
 | 1 | `01_data_validation.sql` | Data quality | Done ✅|
 | 2 | `02_financial_validation.sql` | Financial reconciliation | Done ✅|
-| 3 | `03_pnl_overview.sql` | Overall P&L and margins | Planned ⌛|
+| 3 | `03_pnl_overview.sql` | Overall P&L and margins | Done ✅|
 | 4 | `04_monthly_growth.sql` | Growth over time | Planned ⌛|
 | 5 | `05_segment_performance.sql` | Profit by segment | Planned ⌛|
 | 6 | `06_profit_leakage.sql` | Loss-making transactions | Planned ⌛|
@@ -149,6 +169,7 @@ Phase descriptions and findings are added here only after each phase is finished
 
 ---
 
+
 ## Repository Structure
 
 ```text
@@ -158,7 +179,8 @@ pl-financial-analytics-sql/
 │   └── (dataset file, original name kept)
 └── sql/
     ├── 01_data_validation.sql
-    └── 02_financial_validation.sql
+    ├── 02_financial_validation.sql
+    └── 03_pnl_overview.sql
 ```
 
 Planned folders (`python/`, `powerbi/`) and further SQL files will be added as each phase is completed.
